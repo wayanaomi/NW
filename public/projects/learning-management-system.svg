@@ -1,0 +1,20 @@
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFF7ED" />
+      <stop offset="100%" stop-color="#FFEDD5" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#g)" />
+  <g opacity="0.9">
+    <rect x="90" y="110" width="380" height="280" rx="18" fill="#111827" />
+    <polygon points="240,210 240,300 320,255" fill="#F97316" />
+    <rect x="500" y="110" width="210" height="60" rx="14" fill="#FFFFFF" stroke="#FDBA74" />
+    <rect x="500" y="184" width="210" height="60" rx="14" fill="#FFFFFF" stroke="#FDBA74" />
+    <rect x="500" y="258" width="210" height="60" rx="14" fill="#FFFFFF" stroke="#FDBA74" />
+    <rect x="500" y="332" width="210" height="60" rx="14" fill="#FFFFFF" stroke="#FDBA74" />
+  </g>
+  <text x="400" y="440" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#EA580C">
+    Learning Management System
+  </text>
+</svg>

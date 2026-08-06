@@ -1,0 +1,21 @@
+{
+  "name": "Naomi Waya | Software Engineer",
+  "short_name": "Naomi Waya",
+  "description": "Portfolio of Naomi Waya, a Software Engineer building scalable web applications, business platforms, and digital products.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f97316",
+  "icons": [
+    {
+      "src": "/icon",
+      "sizes": "any",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-icon",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
