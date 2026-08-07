@@ -10,12 +10,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { contactFormSchema, type ContactFormValues } from "@/utils/validations";
+import {
+  contactFormSchema,
+  type ContactFormValues,
+} from "@/utils/validations";
 
 export function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
-    "idle"
-  );
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
 
   const {
     register,
@@ -36,12 +39,22 @@ export function ContactForm() {
     setStatus("loading");
 
     try {
-      // No backend is wired up yet, so we simulate a network request.
-      // Replace this with a real API call (e.g. an email service) when ready.
-      await new Promise((resolve) => setTimeout(resolve, 1400));
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send");
+      }
+
       setStatus("success");
       reset();
-    } catch {
+    } catch (error) {
+      console.error(error);
       setStatus("error");
     }
   }
@@ -56,12 +69,15 @@ export function ContactForm() {
         <div className="flex size-16 items-center justify-center rounded-full bg-success/10 text-success">
           <CheckCircle2 className="size-8" />
         </div>
+
         <h3 className="text-xl font-semibold text-foreground">
           Message sent successfully
         </h3>
+
         <p className="max-w-sm text-sm text-muted-foreground">
           Thanks for reaching out. I typically reply within one business day.
         </p>
+
         <Button variant="outline" onClick={() => setStatus("idle")}>
           Send another message
         </Button>
@@ -70,7 +86,11 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-5">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      noValidate
+      className="flex flex-col gap-5"
+    >
       <div className="grid gap-5 sm:grid-cols-2">
         <div className="flex flex-col gap-2">
           <Label htmlFor="name">Full Name</Label>
@@ -139,7 +159,7 @@ export function ContactForm() {
         )}
       </div>
 
-      {/* Honeypot field, hidden from real users, for basic bot protection */}
+      {/* Honeypot field */}
       <div className="hidden" aria-hidden="true">
         <label htmlFor="company">Company</label>
         <input

@@ -10,7 +10,7 @@ export const siteConfig = {
   description:
     "Naomi Waya is a Software Engineer who designs and builds scalable web applications, business platforms, internal tools, and digital products used by businesses and organizations.",
   url: "https://naomiwaya.com",
-  email: "naomi@naomiwaya.com",
+  email: "contact@naomiwaya.com",
   location: "Abuja, Nigeria",
   keywords: [
     "Naomi Waya",
@@ -42,7 +42,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     label: "GitHub",
-    href: "https://github.com",
+    href: "https://github.com/wayanaomi",
     icon: FaGithub,
   },
   {
